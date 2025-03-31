@@ -4,19 +4,22 @@ Docker tools for easy life
 Here's an interactive Bash script that will guide users through creating a Dockerfile step by step. This script:
 
 ✅ Asks for the base image (e.g., ubuntu, alpine, python, etc.)
+
 ✅ Prompts for package installations (e.g., curl, vim, python3, etc.)
+
 ✅ Allows adding a working directory
+
 ✅ Prompts for a command to run on container start
+
 ✅ Generates a Dockerfile dynamically
 
-How to Use
+## How to Use
+
 Save the script as create_dockerfile.sh.
 
 Give execute permission:
 
 sh
-Копировать
-Редактировать
 chmod +x create_dockerfile.sh
 Run the script:
 
