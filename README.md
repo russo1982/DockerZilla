@@ -52,11 +52,6 @@ RUN apt-get update && apt-get install -y curl vim && rm -rf /var/lib/apt/lists/*
 WORKDIR /app
 CMD ["python3", "server.py"]
 
-# Console Window Example
-
-This is a simple console-like window with a title, "Copy" and "Edit" buttons. You can use the buttons to copy text or toggle edit mode.
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -128,20 +123,3 @@ This is a simple console-like window with a title, "Copy" and "Edit" buttons. Yo
         </div>
         <div class="console-footer"></div>
     </div>
-
-    <script>
-        function copyConsole() {
-            const consoleBody = document.getElementById("console-body");
-            navigator.clipboard.writeText(consoleBody.innerText).then(() => {
-                alert("Copied to clipboard");
-            });
-        }
-
-        function editConsole() {
-            const consoleBody = document.getElementById("console-body");
-            consoleBody.contentEditable = consoleBody.contentEditable === "true" ? "false" : "true";
-        }
-    </script>
-</body>
-</html>
-
