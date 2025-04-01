@@ -52,8 +52,11 @@ RUN apt-get update && apt-get install -y curl vim && rm -rf /var/lib/apt/lists/*
 WORKDIR /app
 CMD ["python3", "server.py"]
 
+# Console Window Example
 
+This is a simple console-like window with a title, "Copy" and "Edit" buttons. You can use the buttons to copy text or toggle edit mode.
 
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -141,3 +144,4 @@ CMD ["python3", "server.py"]
     </script>
 </body>
 </html>
+
