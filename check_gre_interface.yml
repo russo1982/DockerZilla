@@ -1,0 +1,23 @@
+---
+- name: Verify GRE interface on RouterOS 7
+  hosts: routeros_devices
+  gather_facts: no
+  vars:
+    gre_interface_name: "gre-tunnel1"  # Change this to your GRE interface name
+
+  tasks:
+    - name: Check if GRE interface exists
+      community.routeros.command:
+        commands:
+          - /interface/gre/print where name="{{ gre_interface_name }}"
+      register: gre_interface_result
+
+    - name: Display GRE interface status
+      debug:
+        msg: "GRE interface '{{ gre_interface_name }}' exists and is {{ gre_interface_result.stdout[0]|from_json[0].running }}"
+      when: gre_interface_result.stdout[0]|from_json|length > 0
+
+    - name: Warn if GRE interface doesn't exist
+      debug:
+        msg: "GRE interface '{{ gre_interface_name }}' does not exist"
+      when: gre_interface_result.stdout[0]|from_json|length == 0
