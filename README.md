@@ -1,2 +1,2 @@
 # DockerZilla
-Docker tools for easy life
+Tools for easy automation life
